@@ -9,30 +9,23 @@ using System.Threading.Tasks;
 
 namespace EnfAssigment02.configuarition
 {
-    internal class AirLineconfiguarition : IEntityTypeConfiguration<AirCarft_Routes>
+    internal class AirLineconfiguarition : IEntityTypeConfiguration<AirLine>
     {
-        public void Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder<AirCarft_Routes> builder)
+        public void Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder<AirLine> builder)
         {
-            #region AirCarft_Routes
-           builder
-                .HasKey(A => A.AC_Id);
-           builder
-                .Property(A => A.Route_Id).IsRequired();
-           builder.Property
-                (A => A.Departure)
-                .IsRequired();
-           builder.Property
-                (A => A.Num_Of_Pass)
-                .IsRequired();
-           builder.Property
-                (A => A.price)
-                .IsRequired();
-           builder.Property
-                (A => A.Arrival)
-                .IsRequired()
-                .HasMaxLength(100);
+            #region AirLine
+            builder.HasKey
+                 (e => e.AirLineId);
+            builder.Property(e => e.AirLineName)
+                 .IsRequired()
+                 .HasMaxLength(100);
+            builder.Property(e => e.ContactAddress)
+                 .HasMaxLength(100)
+                 .IsRequired();
+            builder.Property(e => e.Cont_Person)
+                 .IsRequired();
 
-            #endregion
+            #endregion        
         }
     }
 }

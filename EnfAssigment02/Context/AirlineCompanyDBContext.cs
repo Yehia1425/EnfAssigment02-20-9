@@ -131,18 +131,18 @@ namespace EnfAssigment02.Context
                 .IsRequired();
             #endregion
 
-            #region Transaction
-            modelBuilder.Entity<Transaction>().HasKey(e => e.Id);
-            modelBuilder.Entity<Transaction>().Property(e => e.Description)
+            #region Transaction01
+            modelBuilder.Entity<Transaction01>().HasKey(e => e.Id);
+            modelBuilder.Entity<Transaction01>().Property(e => e.Description)
                 .HasMaxLength(200)
                 .IsRequired();
-            modelBuilder.Entity<Transaction>().Property(e => e.Amount)
+            modelBuilder.Entity<Transaction01>().Property(e => e.Amount)
                 .HasColumnType("decimal(18,2)")
                 .IsRequired();
-            modelBuilder.Entity<Transaction>().Property(e => e.Date)
+            modelBuilder.Entity<Transaction01>().Property(e => e.Date)
                 .HasColumnType("date")
                 .IsRequired();
-            modelBuilder.Entity<Transaction>().Property(e => e.Al_Id)
+            modelBuilder.Entity<Transaction01>().Property(e => e.Al_Id)
                 .IsRequired();
 
             #endregion
@@ -152,7 +152,7 @@ namespace EnfAssigment02.Context
         public DbSet<AirCraft> AirCrafts { get; set; }
         public DbSet<AirLine> AirLines { get; set; }
         public DbSet<AirLine_Phones> AirLine_Phones { get; set; }
-        public DbSet<Transaction> Transactions { get; set; }
+        public DbSet<Transaction01> Transaction01s { get; set; }
 
         public DbSet<AirCarft_Routes> AirCarft_Routes { get; set; }
 

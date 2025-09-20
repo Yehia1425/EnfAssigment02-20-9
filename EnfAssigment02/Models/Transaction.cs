@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace AssigmentENF.Models
 {
-    internal class Transaction
+    internal class Transaction01
     {
         [Key]
         public int Id { get; set; }
